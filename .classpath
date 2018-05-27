@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="PDS-PracticaFinal/src"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="tests">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="PDS-PracticaFinal/src"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="src" path="lib"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry exported="true" kind="lib" path="hamcrest-core-1.3.jar"/>
-	<classpathentry exported="true" kind="lib" path="junit-4.12.jar"/>
-	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/ESTARK-Component"/>
+	<classpathentry exported="true" kind="lib" path="/Users/pablo/Downloads/ESTARK-Component/lib/hamcrest-core-1.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/pablo/Downloads/ESTARK-Component/lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="lib/javax.json-1.2-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib/javax.json-api-1.2-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

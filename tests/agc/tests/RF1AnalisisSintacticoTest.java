@@ -7,13 +7,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import agc.AGCCalculator;
+import agc.logic.Calculator;
 import agc.data.AccelerationByAxes;
 import agc.exceptions.AGCException;
 
 public class RF1AnalisisSintacticoTest {
 	
-	private AGCCalculator calculadora;
+	private Calculator calculadora;
 	
 	/**
 	 * @throws java.lang.Exception
@@ -34,7 +34,7 @@ public class RF1AnalisisSintacticoTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		calculadora = new agc.AGCCalculator();
+		calculadora = new AGCCalculator();
 	}
 
 	/**
