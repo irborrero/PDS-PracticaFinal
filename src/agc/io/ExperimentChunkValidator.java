@@ -11,22 +11,21 @@ import agc.exceptions.AGCException;
 public class ExperimentChunkValidator {
 	public ExperimentChunk Validate (JsonObject element) throws AGCException {
 
-		double gyrox, gyroy, gyroz, accelx, accely, accelz;
+		double accelx, accely, accelz, latitude, longitude;
 		Date parsedDate;
 		// Check if keys for the given chunk are valid
 		if (hasValidKeys(element)) {
 			parsedDate = validateTime(element);
-			gyrox = validateGyroValue(element, "GYRO_X");
-			gyroy = validateGyroValue(element, "GYRO_Y");
-			gyroz = validateGyroValue(element, "GYRO_Z");
 			accelx = validateAccelValue(element, "ACCEL_X");
 			accely = validateAccelValue(element, "ACCEL_Y");
 			accelz = validateAccelValue(element, "ACCEL_Z");
+			latitude = validateLatitude(element, "LATITUDE");
+			longitude = validateLongitude(element, "LONGITUDE");
 		} else {
 			throw new AGCException("Error: Invalid key value in input JSON.");
 		}
-		ExperimentChunk experimentChunk = new ExperimentChunk(parsedDate, gyrox, gyroy, gyroz, accelx, accely,
-				accelz);
+		ExperimentChunk experimentChunk = new ExperimentChunk(parsedDate, accelx, accely,
+				accelz, latitude, longitude);
 		return experimentChunk;
 	}
 
@@ -61,17 +60,30 @@ public class ExperimentChunkValidator {
 	}
 
 	// Effort spent: 14 minutos
-	private double validateGyroValue(JsonObject element, String label) throws AGCException {
-		double gyrox = 0.0d;
+	private double validateLatitude(JsonObject element, String label) throws AGCException {
+		double latitude = 0.0d;
 		try {
-			gyrox = processNumberForLabel(label, element);
-			if ((gyrox < 0) || (gyrox > 359.999d)) {
-				throw new AGCException("Error: gyroscope value for" + label + " cannot be less than zero or greater than 359.999.");
+			latitude = processNumberForLabel(label, element);
+			if ((latitude < -89.9999999d) || (latitude > 89.9999999d)) {
+				throw new AGCException("Error: latitude value for" + label + " cannot be less than -89.9999999 or greater than 89.9999999.");
 			}
 		} catch (AGCException e) {
 			throw e;
 		}
-		return gyrox;
+		return latitude;
+	}
+	
+	private double validateLongitude(JsonObject element, String label) throws AGCException {
+		double longitude = 0.0d;
+		try {
+			longitude = processNumberForLabel(label, element);
+			if ((longitude < -89.9999999d) || (longitude > 89.9999999d)) {
+				throw new AGCException("Error: longitude value for" + label + " cannot be less than -179.9999999 or greater than 179.9999999.");
+			}
+		} catch (AGCException e) {
+			throw e;
+		}
+		return longitude;
 	}
 	
 	// Effort spent: 21 minutos

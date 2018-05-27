@@ -6,8 +6,8 @@ import agc.data.DistByAxes;
 import agc.io.ExperimentDataFileManager;
 import agc.exceptions.AGCException;
 import agc.logic.Calculator;
-import agc.logic.FullTurnCalculator;
-import agc.logic.MinMaxAccelerationCalculator;
+import agc.logic.DistCalculator;
+import agc.logic.MeanVarSpeedCalculator;
 
 public class AGCManager implements AgcCalculatorInterface {
 
@@ -17,7 +17,7 @@ public class AGCManager implements AgcCalculatorInterface {
 		Experiment myExperiment = myDataManager.Parse(InputFile);		
 		myExperiment.identifySubExperiment(time);
 		
-		Calculator myCalculator = new DistCalculator ();
+		DistCalculator myCalculator = new DistCalculator();
 		DistByAxes result = (DistByAxes) myCalculator.Calculate(myExperiment);
 		return result;
 	}
