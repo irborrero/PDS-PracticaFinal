@@ -2,10 +2,10 @@ package agc.logic;
 
 import agc.data.ExperimentChunk;
 import agc.data.Experiment;
-import agc.data.FullTurnByAxes;
+import agc.data.DistByAxes;
 import agc.exceptions.AGCException;
 
-public class FullTurnCalculator implements Calculator {
+public class DistCalculator implements Calculator {
 
 	// Effort spent: 29 minutos
 	@Override
@@ -19,12 +19,12 @@ public class FullTurnCalculator implements Calculator {
 		// Skip to next element to process the remaining values 
 		for (int i=myExperiment.getSubExperimentInitialItem()+1; i<myExperiment.getSubExperimentFinalItem(); i++){
 			ExperimentChunk currentChunk = myExperiment.getItem(i);
-			xValue += Math.abs(currentChunk.getGyro_x() - previousChunk.getGyro_x());
-			yValue += Math.abs(currentChunk.getGyro_y() - previousChunk.getGyro_y());
-			zValue += Math.abs(currentChunk.getGyro_z() - previousChunk.getGyro_z());
+			xValue += Math.abs(currentChunk.getLatitude() - previousChunk.getLatitude());
+			yValue += Math.abs(currentChunk.getLongitude() - previousChunk.getLongitude());
+			zValue += 1; // TODO
 			previousChunk = myExperiment.getItem(i);
 		}
-		FullTurnByAxes result = new FullTurnByAxes(xValue, yValue, zValue);
+		DistByAxes result = new DistByAxes(xValue, yValue, zValue);
 		return result;
 	}
 
