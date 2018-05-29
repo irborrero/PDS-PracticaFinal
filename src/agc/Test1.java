@@ -14,18 +14,22 @@ import agc.exceptions.AGCException;
 import agc.*;
 
 public class Test1 {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String message ="hola";
+	
+	/* Caso de Prueba: <CP-RF1-03 - Fichero Inexistente>
+	* Nodo/s del Árbol de Derivación: <1>
+	 Tipo de Prueba: <Omisión>  Técnica de prueba: Análisis Sintáctico
+	* Resultado Esperado: <Fichero inexistente>
+	*/
+	@Test
+	public final void FicheroInexistente() {
+		String message ="";
 		AGCManager calculadora = new AGCManager();
-		System.out.println("Hola");
 		try {
 		calculadora.CalculateDist("Prueba1.json", 60);
 		}catch(AGCException ex){
+			ex.printStackTrace();
 			System.out.println("mal");
 			message = ex.getMessage();
 		}
 	}
-
 }

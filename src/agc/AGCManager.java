@@ -19,6 +19,7 @@ public class AGCManager implements AgcCalculatorInterface {
 		
 		DistCalculator myCalculator = new DistCalculator();
 		DistByAxes result = (DistByAxes) myCalculator.Calculate(myExperiment);
+		System.out.println(result.getdist_X() + " " +result.getdist_Y()+" "+ result.getdist_Z());
 		return result;
 	}
 	
@@ -30,6 +31,7 @@ public class AGCManager implements AgcCalculatorInterface {
 		
 		Calculator myCalculator = new MeanVarSpeedCalculator ();
 		SpeedByAxes result = (SpeedByAxes) myCalculator.Calculate(myExperiment);
+		System.out.println(result.getX_Axis()+" "+result.getY_Axis()+" "+result.getZ_Axis());
 		return result;
 	}
 

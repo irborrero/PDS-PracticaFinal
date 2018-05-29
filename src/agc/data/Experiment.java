@@ -37,7 +37,7 @@ public class Experiment {
 		long experimentLengthMillis = calculateExperimentLenght();
 		if (time < 0) {
 			throw new AGCException("Error: duration less than zero.");
-		} else if (calculateExperimentStart() + time > experimentLengthMillis) {
+		} else if (time > experimentLengthMillis) {
 			throw new AGCException("Error: time frame to process exceeds experiment length.");
 		}
 		else {
@@ -58,19 +58,7 @@ public class Experiment {
 		}
 		return length;
 	}
-	
-	private long calculateExperimentStart() throws AGCException {
-		long Start;
-		Date begin;
-		if (this.experimentItems.size() > 0) {
-			begin = this.experimentItems.get(0).getTime();
-			} else {
-			throw new AGCException("Error: experiment is empty.");
-		}
-		Start = begin.getTime();
-		return Start;
-	}
-	
+
 	// Effort spent: 25 minutos
 	private int calculatePositionIndex(int Instant) {
 		int index;

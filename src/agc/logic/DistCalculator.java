@@ -19,9 +19,10 @@ public class DistCalculator implements Calculator {
 		// Skip to next element to process the remaining values 
 		for (int i=myExperiment.getSubExperimentInitialItem()+1; i<myExperiment.getSubExperimentFinalItem(); i++){
 			ExperimentChunk currentChunk = myExperiment.getItem(i);
-			xValue += Math.abs(currentChunk.getLatitude() - previousChunk.getLatitude());
-			yValue += Math.abs(currentChunk.getLongitude() - previousChunk.getLongitude());
-			zValue += 1; // TODO
+			xValue += currentChunk.getAccel_x();
+			System.out.println(currentChunk.getAccel_x());
+			yValue += currentChunk.getAccel_y()*0.002;
+			zValue += currentChunk.getAccel_z()*0.002;
 			previousChunk = myExperiment.getItem(i);
 		}
 		DistByAxes result = new DistByAxes(xValue, yValue, zValue);

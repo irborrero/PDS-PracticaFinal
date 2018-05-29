@@ -34,8 +34,7 @@ public class ExperimentChunkValidator {
 	private static boolean hasValidKeys(JsonObject element) {
 		boolean result = true;
 		for (String key : element.keySet()) {
-			if (key.equals("Time") || key.equals("GYRO_X") || key.equals("GYRO_Y") || key.equals("GYRO_Z")
-					|| key.equals("ACCEL_X") || key.equals("ACCEL_Y") || key.equals("ACCEL_Z")) {
+			if (key.equals("Time") ||  key.equals("ACCEL_X") || key.equals("ACCEL_Y") || key.equals("ACCEL_Z") || key.equals("LATITUDE")|| key.equals("LONGITUDE")) {
 				// result = true;
 			} else {
 				result = false;
