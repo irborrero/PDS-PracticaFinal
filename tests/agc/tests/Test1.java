@@ -29,7 +29,7 @@ public class Test1 {
 			ex.printStackTrace();
 			message = ex.getMessage();
 		}
-		Assert.assertEquals("Fichero inexistente", message);
+		Assert.assertEquals("Error: could not read data from input file.", message);
 	}
 	
 	/* Caso de Prueba: <CP-AGCRF01-02 - Sintaxis incorrecta>
@@ -46,7 +46,7 @@ public class Test1 {
 			ex.printStackTrace();
 			message = ex.getMessage();
 		}
-		Assert.assertEquals("Sintaxis Incorrecta", message);
+		Assert.assertEquals("Error: could not read data from input file.", message);
 	}
 	
 	/* Caso de Prueba: <CP-AGCRF01-03 - Time Stamp no aparece en el fichero de entrada>
@@ -63,7 +63,7 @@ public class Test1 {
 			ex.printStackTrace();
 			message = ex.getMessage();
 		}
-		Assert.assertEquals("Fichero no contiene time_stamp", message);
+		Assert.assertEquals("Error: invalid input for Time in JSON.", message);
 	}
 		
 		
@@ -81,7 +81,7 @@ public class Test1 {
 				ex.printStackTrace();
 				message = ex.getMessage();
 			}
-			Assert.assertEquals("Fichero contiene varios time_stampd", message);
+			Assert.assertEquals("Error: Invalid key value in input JSON.", message);
 	}
 		
 	/* Caso de Prueba: <CP-AGCRF01-05 - Time Stamp sin precisión de milisegundos>
@@ -93,12 +93,12 @@ public class Test1 {
 			String message ="";
 			AGCManager calculadora = new AGCManager();
 			try {
-			calculadora.CalculateDist("TimeStampImpreciso.json", 60);
+			calculadora.CalculateDist("Error: invalid input for Time in JSON.", 60);
 			}catch(AGCException ex){
 				ex.printStackTrace();
 				message = ex.getMessage();
 			}
-			Assert.assertEquals("Time Stamp sin precisión requerida", message);
+			Assert.assertEquals("Error: could not read data from input file.", message);
 		}
 			
 	/*Caso de Prueba: <CP-AGCRF01-06 - Time Stamp tiene algún campo negativo>
@@ -115,7 +115,7 @@ public class Test1 {
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Time Stamp contiene algún campo negativo", message);
+				Assert.assertEquals("Error: invalid input for Time in JSON.", message);
 	}
 			
 	/* Caso de Prueba: < CP-AGCRF01-07 - Time Stamp no respeta intervalo de 20 ms>
@@ -140,7 +140,7 @@ public class Test1 {
 	Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Valor de campo de eje no es número decimal>
 	*/
 			@Test
-			public final void NoDecimal() {
+			public final void s() {
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
@@ -149,7 +149,7 @@ public class Test1 {
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Valor de campo de eje no es número decimal", message);
+				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
 	}
 		
 	/* Caso de Prueba: < CP-AGCRF01-09 - Número decimal no separado por puntos>
@@ -166,7 +166,7 @@ public class Test1 {
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Fichero con decimales en formato incorrecto", message);
+				Assert.assertEquals("Error: could not read data from input file.", message);
 	}
 			
 /* Caso de Prueba: < CP-AGCRF01-10 - Número decimal con menos de tres posiciones decimales>
@@ -183,7 +183,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Fichero con valores con precisión incorrecta", message);
+				Assert.assertEquals("Error: less than 3 decimals for ACCEL_X in JSON input data.", message);
 	}
 			
 
@@ -201,7 +201,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin 
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Fichero sin campo de eje", message);
+				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
 	}
 			
 /* Caso de Prueba: < CP-AGCRF01-12 - Existe más de un campo para el eje X>
@@ -253,7 +253,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin 
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Fichero sin un campo para latitud", message);
+				Assert.assertEquals("Error: LATITUDE in JSON input data is not a number.", message);
 	}
 			
 /* Caso de Prueba: < CP-AGCRF01-15 - El valor latitud no es un valor decimal>
@@ -270,7 +270,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Fichero con valor de latitud no decimal", message);
+				Assert.assertEquals("Error: LATITUDE in JSON input data is not a number.", message);
 	}
 		
 /* Caso de Prueba: < CP-AGCRF01-16 -La parte entera y decimal de la latitud no están separadas por un punto>
@@ -376,7 +376,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin 
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Fichero sin un campo para longitud", message);
+				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
 	}	
 			
 			
