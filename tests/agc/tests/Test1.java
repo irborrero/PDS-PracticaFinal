@@ -140,7 +140,7 @@ public class Test1 {
 	Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Valor de campo de eje no es número decimal>
 	*/
 			@Test
-			public final void s() {
+			public final void NoDecimal() {
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
@@ -223,7 +223,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 			
 
 /* Caso de Prueba: < CP-AGCRF01-13 - Existe más de un campo para la latitud>
-*Clase equivalencia: CEI17
+*Clase equivalencia: CEI19
 Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con más de un campo para la latitud>
 */
 			@Test
@@ -240,7 +240,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 	}
 		
 /* Caso de Prueba: < CP-AGCRF01-14 - No existe un campo para la latitud>
-*Clase equivalencia: CEI17
+*Clase equivalencia: CEI20
 Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin un campo para latitud>
 */
 			@Test
@@ -257,7 +257,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin 
 	}
 			
 /* Caso de Prueba: < CP-AGCRF01-15 - El valor latitud no es un valor decimal>
-*Clase equivalencia: CEI17
+*Clase equivalencia: CEI21
 Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con valor de latitud no decimal>
 */
 			@Test
@@ -270,11 +270,11 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Error: LATITUDE in JSON input data is not a number.", message);
+				Assert.assertEquals("Error: could not read data from input file.", message);
 	}
 		
 /* Caso de Prueba: < CP-AGCRF01-16 -La parte entera y decimal de la latitud no están separadas por un punto>
-*Clase equivalencia: CEI17
+*Clase equivalencia: CEI22
 Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con valor de latitud no válido>
 */
 			
@@ -288,11 +288,11 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Fichero con valor de latitud no válido", message);
+				Assert.assertEquals("Error: could not read data from input file.", message);
 	}
 			
 /* Caso de Prueba: < CP-AGCRF01-17 -El valor latitud no tiene 7 decimales de precisión>
-*Clase equivalencia: CEI17
+*Clase equivalencia: CEI23
 Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con valor de latitud no válido>
 */
 			@Test
@@ -305,12 +305,12 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Fichero con valor de latitud no válido", message);
+				Assert.assertEquals("Error: less than 7 decimals for LATITUDE in JSON input data.", message);
 	}
 			
 
-/* Caso de Prueba: < CP-AGCRF01-18 -El valor latitud es -90.0000001>
-*Valor limite asociado: CEI17
+/* Caso de Prueba: < CP-AGCRF01-18 -El valor latitud es -90.0000000>
+*Valor limite asociado: AVL1
 Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de latitud fuera de rango negativo>
 */
 			@Test
@@ -323,11 +323,11 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de l
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Fichero con valor de latitud fuera de rango negativo", message);
+				Assert.assertEquals("Error: latitude value for LATITUDE cannot be less than -89.9999999 or greater than 89.9999999.", message);
 	}
 			
-/* Caso de Prueba: < CP-AGCRF01-19 -El valor latitud es 90.0000001>
-*Valor limite asociado: CEI17
+/* Caso de Prueba: < CP-AGCRF01-19 -El valor latitud es 90.0000000>
+*Valor limite asociado: AVL4
 Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de latitud fuera de rango positivo>
 */
 			@Test
@@ -340,12 +340,12 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de l
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Fichero con valor de latitud fuera de rango positivo", message);
+				Assert.assertEquals("Error: latitude value for LATITUDE cannot be less than -89.9999999 or greater than 89.9999999.", message);
 	}
 			
 
 /* Caso de Prueba: < CP-AGCRF01-20 -Existe más de un campo para la longitud>
-*Clase de Equivalencia: CEI17
+*Clase de Equivalencia: CEI25
 Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con más de un campo para longitud>
 */
 			@Test
@@ -362,7 +362,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 	}	
 			
 /* Caso de Prueba: < CP-AGCRF01-21 -No existe un campo para la longitud>
-*Clase de Equivalencia: CEI17
+*Clase de Equivalencia: CEI26
 Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin un campo para longitud>
 */
 			
@@ -376,11 +376,156 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin 
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
+				Assert.assertEquals("Error: LONGITUDE in JSON input data is not a number.", message);
+	}	
+			
+
+/* Caso de Prueba: < CP-AGCRF01-22 -El valor longitud no es un valor decimal>
+*Clase de Equivalencia: CEI27
+Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con valor de longitud no decimal>
+*/
+			@Test
+			public final void LongitudNoDecimal() {
+				String message ="";
+				AGCManager calculadora = new AGCManager();
+				try {
+				calculadora.CalculateDist("LongitudNoDecimal.json", 60);
+				}catch(AGCException ex){
+					ex.printStackTrace();
+					message = ex.getMessage();
+				}
+				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
+	}
+			
+			
+/* Caso de Prueba: < CP-AGCRF01-23 -La parte entera y decimal de la longitud no están separadas por un punto>
+*Clase de Equivalencia: CEI28
+Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con valor de longitud no válido>
+*/
+			@Test
+			public final void LongitudNoPunto() {
+				String message ="";
+				AGCManager calculadora = new AGCManager();
+				try {
+				calculadora.CalculateDist("LongitudNoPunto.json", 60);
+				}catch(AGCException ex){
+					ex.printStackTrace();
+					message = ex.getMessage();
+				}
+				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
+	}
+			
+			
+/* Caso de Prueba: < CP-AGCRF01-24 -El valor longitud no tiene 7 decimales de precisión>
+*Clase de Equivalencia: CEI29
+Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con valor de longitud no válido>
+*/
+			@Test
+			public final void LongitudNoExacta() {
+				String message ="";
+				AGCManager calculadora = new AGCManager();
+				try {
+				calculadora.CalculateDist("LongitudNoExacta.json", 60);
+				}catch(AGCException ex){
+					ex.printStackTrace();
+					message = ex.getMessage();
+				}
 				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
 	}	
 			
 			
+/* Caso de Prueba: < CP-AGCRF01-25 -El valor longitud es -180.0000000>
+*Valor limite asociado: AVL5
+Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de longitud fuera de rango>
+*/
+			@Test
+			public final void LongitudVLNegativo() {
+				String message ="";
+				AGCManager calculadora = new AGCManager();
+				try {
+				calculadora.CalculateDist("LongitudVLNegativo.json", 60);
+				}catch(AGCException ex){
+					ex.printStackTrace();
+					message = ex.getMessage();
+				}
+				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
+	}	
 			
+	
+/* Caso de Prueba: < CP-AGCRF01-26 -El valor longitud es 180.0000000>
+*Valor limite asociado: AVL8
+Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de longitud fuera de rango>
+*/
+			
+			@Test
+			public final void LongitudVLPositivo() {
+				String message ="";
+				AGCManager calculadora = new AGCManager();
+				try {
+				calculadora.CalculateDist("LongitudVLPositivo.json", 60);
+				}catch(AGCException ex){
+					ex.printStackTrace();
+					message = ex.getMessage();
+				}
+				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
+	}	
+		
+	
+			
+/* Caso de Prueba: < CP-AGCRF01-27 -Variable duración con valores negativos>
+*Clase de Equivalencia: CEI29
+Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Variable negativa no válida>
+*/
+			@Test
+			public final void VariableNegativa() {
+				String message ="";
+				AGCManager calculadora = new AGCManager();
+				try {
+				calculadora.CalculateDist("Prueba1", -2);
+				}catch(AGCException ex){
+					ex.printStackTrace();
+					message = ex.getMessage();
+				}
+				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
+	}	
+			
+			
+/* Caso de Prueba: < CP-AGCRF01-28 -El valor de la variable duración es -1>
+*Valor limite asociado: AVL8
+Técnica de prueba: <Valor limite>  Resultado Esperado: <Variable negativa no válida>
+*/
+			@Test
+			public final void VariableAVL() {
+				String message ="";
+				AGCManager calculadora = new AGCManager();
+				try {
+				calculadora.CalculateDist("Prueba1", -1);
+				}catch(AGCException ex){
+					ex.printStackTrace();
+					message = ex.getMessage();
+				}
+				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
+	}	
+			
+
+/* Caso de Prueba: < CP-AGCRF01-29 -El valor de la variable duración es el límite superior +1>
+*Valor limite asociado: AVL8
+Técnica de prueba: <Valor limite>  Resultado Esperado: <Variable introducida incorrecta>
+*/
+			@Test
+			public final void VariableAVL2() {
+				String message ="";
+				AGCManager calculadora = new AGCManager();
+				try {
+				calculadora.CalculateDist("Prueba1", 101);
+				}catch(AGCException ex){
+					ex.printStackTrace();
+					message = ex.getMessage();
+				}
+				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
+	}	
+				
+
 			
 			@Test
 			public final void validoe() {

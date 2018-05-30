@@ -35,7 +35,7 @@ public class ExperimentChunkValidator {
 		boolean result = true;
 		for (String key : element.keySet()) {
 			if (key.equals("Time") ||  key.equals("ACCEL_X") || key.equals("ACCEL_Y") || key.equals("ACCEL_Z") || key.equals("LATITUDE")|| key.equals("LONGITUDE")) {
-				// result = true;
+				result = true;
 			} else {
 				result = false;
 			}
@@ -59,17 +59,23 @@ public class ExperimentChunkValidator {
 	}
 
 	// Effort spent: 14 minutos
-	private double validateLatitude(JsonObject element, String label) throws AGCException {
+	private double validateLatitude(JsonObject element,  String label) throws AGCException {
 		double latitude = 0.0d;
+		double value = processNumberForLabel(label, element);
 		try {
-			latitude = processNumberForLabel(label, element);
-			if ((latitude < -89.9999999d) || (latitude > 89.9999999d)) {
-				throw new AGCException("Error: latitude value for" + label + " cannot be less than -89.9999999 or greater than 89.9999999.");
+			if(!hasAtLeastSevenDecimals(element.getJsonNumber("LATITUDE").toString())) {
+				throw new AGCException("Error: less than 7 decimals for LATITUDE in JSON input data.");
 			}
-		} catch (AGCException e) {
-			throw e;
-		}
+			
+			if ((value < -89.9999999d) || (value > 89.9999999d)) {
+				throw new AGCException("Error: latitude value for LATITUDE cannot be less than -89.9999999 or greater than 89.9999999.");
+			}
+			
+		}catch (AGCException e) {
+				throw e;
+			}
 		return latitude;
+
 	}
 	
 	private double validateLongitude(JsonObject element, String label) throws AGCException {
@@ -128,6 +134,21 @@ public class ExperimentChunkValidator {
 		
 		// pos = Three decimals plus plus one for total length (index) -> less than four instead of less than three
 		if ((input.length() - pos) < 4) {
+			return false;
+		}
+		return true;
+	}
+	
+	private boolean hasAtLeastSevenDecimals(String input) throws AGCException {
+		int pos = input.lastIndexOf('.');
+
+		// If not dots found, error, no separator
+		if (pos < 0) {
+			throw new AGCException("Error: Invalid separator for decimal number.");
+		}
+		
+		// pos = Three decimals plus plus one for total length (index) -> less than four instead of less than three
+		if ((input.length() - pos) < 8) {
 			return false;
 		}
 		return true;
