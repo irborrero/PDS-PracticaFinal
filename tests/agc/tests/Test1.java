@@ -27,9 +27,9 @@ public class Test1 {
 		calculadora.CalculateDist("Noexiste.json", 60);
 		}catch(AGCException ex){
 			ex.printStackTrace();
-			System.out.println("Fichero inexistente");
 			message = ex.getMessage();
 		}
+		Assert.assertEquals("Fichero inexistente", message);
 	}
 	
 	/* Caso de Prueba: <CP-AGCRF01-02 - Sintaxis incorrecta>
@@ -44,9 +44,9 @@ public class Test1 {
 		calculadora.CalculateDist("Incorrecto.json", 60);
 		}catch(AGCException ex){
 			ex.printStackTrace();
-			System.out.println("Sintaxis Incorrecta");
 			message = ex.getMessage();
 		}
+		Assert.assertEquals("Sintaxis Incorrecta", message);
 	}
 	
 	/* Caso de Prueba: <CP-AGCRF01-03 - Time Stamp no aparece en el fichero de entrada>
@@ -61,9 +61,9 @@ public class Test1 {
 		calculadora.CalculateDist("SinTimeStamp.json", 60);
 		}catch(AGCException ex){
 			ex.printStackTrace();
-			System.out.println("Fichero no contiene time_stamp");
 			message = ex.getMessage();
 		}
+		Assert.assertEquals("Fichero no contiene time_stamp", message);
 	}
 		
 		
@@ -79,9 +79,9 @@ public class Test1 {
 			calculadora.CalculateDist("VariosTimeStamp.json", 60);
 			}catch(AGCException ex){
 				ex.printStackTrace();
-				System.out.println("Fichero contiene varios time_stamp");
 				message = ex.getMessage();
 			}
+			Assert.assertEquals("Fichero contiene varios time_stampd", message);
 	}
 		
 	/* Caso de Prueba: <CP-AGCRF01-05 - Time Stamp sin precisión de milisegundos>
@@ -96,9 +96,9 @@ public class Test1 {
 			calculadora.CalculateDist("TimeStampImpreciso.json", 60);
 			}catch(AGCException ex){
 				ex.printStackTrace();
-				System.out.println("Time Stamp sin precisión requerida");
 				message = ex.getMessage();
 			}
+			Assert.assertEquals("Time Stamp sin precisión requerida", message);
 		}
 			
 	/*Caso de Prueba: <CP-AGCRF01-06 - Time Stamp tiene algún campo negativo>
@@ -113,9 +113,9 @@ public class Test1 {
 				calculadora.CalculateDist("TimeStampNegativo.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
-					System.out.println("Time Stamp contiene algún campo negativo");
 					message = ex.getMessage();
 				}
+				Assert.assertEquals("Time Stamp contiene algún campo negativo", message);
 	}
 			
 	/* Caso de Prueba: < CP-AGCRF01-07 - Time Stamp no respeta intervalo de 20 ms>
@@ -130,9 +130,9 @@ public class Test1 {
 				calculadora.CalculateDist("TimeStampIrrespetuoso.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
-					System.out.println("TimeStamp con intervalo incorrecto");
 					message = ex.getMessage();
 				}
+				Assert.assertEquals("TimeStamp con intervalo incorrecto", message);
 	}
 			
 	/* Caso de Prueba: < CP-AGCRF01-08 - El valor de aceleración del eje X no es un número decimal>
@@ -147,9 +147,9 @@ public class Test1 {
 				calculadora.CalculateDist("NoDecimal.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
-					System.out.println("Valor de campo de eje no es número decimal");
 					message = ex.getMessage();
 				}
+				Assert.assertEquals("Valor de campo de eje no es número decimal", message);
 	}
 		
 	/* Caso de Prueba: < CP-AGCRF01-09 - Número decimal no separado por puntos>
@@ -164,9 +164,9 @@ public class Test1 {
 				calculadora.CalculateDist("NoSeparadosPunto.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
-					System.out.println("Fichero con decimales en formato incorrecto");
 					message = ex.getMessage();
 				}
+				Assert.assertEquals("Fichero con decimales en formato incorrecto", message);
 	}
 			
 /* Caso de Prueba: < CP-AGCRF01-10 - Número decimal con menos de tres posiciones decimales>
@@ -181,9 +181,9 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 				calculadora.CalculateDist("DecimalesImprecisos.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
-					System.out.println("Fichero con valores con precisión incorrecta");
 					message = ex.getMessage();
 				}
+				Assert.assertEquals("Fichero con valores con precisión incorrecta", message);
 	}
 			
 
@@ -199,9 +199,9 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin 
 				calculadora.CalculateDist("SinCampoDeEje.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
-					System.out.println("Fichero sin campo de eje");
 					message = ex.getMessage();
 				}
+				Assert.assertEquals("Fichero sin campo de eje", message);
 	}
 			
 /* Caso de Prueba: < CP-AGCRF01-12 - Existe más de un campo para el eje X>
@@ -216,9 +216,9 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 				calculadora.CalculateDist("VariosCamposDeEje.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
-					System.out.println("Fichero con más de un campo para un eje");
 					message = ex.getMessage();
 				}
+				Assert.assertEquals("Fichero con más de un campo para un eje", message);
 	}
 			
 
@@ -234,9 +234,9 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 				calculadora.CalculateDist("VariosCamposDeLatitud.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
-					System.out.println("Fichero con más de un campo para la latitud");
 					message = ex.getMessage();
 				}
+				Assert.assertEquals("Fichero con más de un campo para la latitud", message);
 	}
 		
 /* Caso de Prueba: < CP-AGCRF01-14 - No existe un campo para la latitud>
@@ -251,9 +251,9 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin 
 				calculadora.CalculateDist("SinLatitud.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
-					System.out.println("Fichero sin un campo para latitud");
 					message = ex.getMessage();
 				}
+				Assert.assertEquals("Fichero sin un campo para latitud", message);
 	}
 			
 /* Caso de Prueba: < CP-AGCRF01-15 - El valor latitud no es un valor decimal>
@@ -268,9 +268,9 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 				calculadora.CalculateDist("LatitudNoDecimal.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
-					System.out.println("Fichero con valor de latitud no decimal");
 					message = ex.getMessage();
 				}
+				Assert.assertEquals("Fichero con valor de latitud no decimal", message);
 	}
 		
 /* Caso de Prueba: < CP-AGCRF01-16 -La parte entera y decimal de la latitud no están separadas por un punto>
@@ -286,9 +286,9 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 				calculadora.CalculateDist("LatitudNoPunto.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
-					System.out.println("Fichero con valor de latitud no válido");
 					message = ex.getMessage();
 				}
+				Assert.assertEquals("Fichero con valor de latitud no válido", message);
 	}
 			
 /* Caso de Prueba: < CP-AGCRF01-17 -El valor latitud no tiene 7 decimales de precisión>
@@ -303,9 +303,9 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 				calculadora.CalculateDist("LatitudNoExacta.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
-					System.out.println("Fichero con valor de latitud no válido");
 					message = ex.getMessage();
 				}
+				Assert.assertEquals("Fichero con valor de latitud no válido", message);
 	}
 			
 
@@ -321,10 +321,66 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de l
 				calculadora.CalculateDist("LatitudVLNegativo.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
-					System.out.println("Fichero con valor de latitud no válido");
 					message = ex.getMessage();
 				}
+				Assert.assertEquals("Fichero con valor de latitud fuera de rango negativo", message);
 	}
+			
+/* Caso de Prueba: < CP-AGCRF01-19 -El valor latitud es 90.0000001>
+*Valor limite asociado: CEI17
+Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de latitud fuera de rango positivo>
+*/
+			@Test
+			public final void LatitudVLPositivo() {
+				String message ="";
+				AGCManager calculadora = new AGCManager();
+				try {
+				calculadora.CalculateDist("LatitudVLPositivo.json", 60);
+				}catch(AGCException ex){
+					ex.printStackTrace();
+					message = ex.getMessage();
+				}
+				Assert.assertEquals("Fichero con valor de latitud fuera de rango positivo", message);
+	}
+			
+
+/* Caso de Prueba: < CP-AGCRF01-20 -Existe más de un campo para la longitud>
+*Clase de Equivalencia: CEI17
+Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con más de un campo para longitud>
+*/
+			@Test
+			public final void VariosLongitud() {
+				String message ="";
+				AGCManager calculadora = new AGCManager();
+				try {
+				calculadora.CalculateDist("VariosLongitud.json", 60);
+				}catch(AGCException ex){
+					ex.printStackTrace();
+					message = ex.getMessage();
+				}
+				Assert.assertEquals("Fichero con más de un campo para longitud", message);
+	}	
+			
+/* Caso de Prueba: < CP-AGCRF01-21 -No existe un campo para la longitud>
+*Clase de Equivalencia: CEI17
+Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin un campo para longitud>
+*/
+			
+			@Test
+			public final void SinLongitud() {
+				String message ="";
+				AGCManager calculadora = new AGCManager();
+				try {
+				calculadora.CalculateDist("SinLongitud.json", 60);
+				}catch(AGCException ex){
+					ex.printStackTrace();
+					message = ex.getMessage();
+				}
+				Assert.assertEquals("Fichero sin un campo para longitud", message);
+	}	
+			
+			
+			
 			
 			@Test
 			public final void validoe() {
@@ -337,5 +393,6 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de l
 					System.out.println("caca");
 					message = ex.getMessage();
 				}
+				
 			}
 }
