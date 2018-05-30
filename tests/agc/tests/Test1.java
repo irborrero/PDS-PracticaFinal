@@ -132,7 +132,7 @@ public class Test1 {
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("TimeStamp con intervalo incorrecto", message);
+				Assert.assertEquals("Error: time values in experiment are not consecutive with a 50Hz rate.", message);
 	}
 			
 	/* Caso de Prueba: < CP-AGCRF01-08 - El valor de aceleración del eje X no es un número decimal>
