@@ -15,7 +15,7 @@ public class AGCManager implements AgcCalculatorInterface {
 	public DistByAxes CalculateDist(String InputFile, int time) throws AGCException {
 		ExperimentDataFileManager myDataManager = new ExperimentDataFileManager();
 		Experiment myExperiment = myDataManager.Parse(InputFile);		
-		myExperiment.identifySubExperiment(time);
+		myExperiment.identifySubExperiment(0,time);
 		
 		DistCalculator myCalculator = new DistCalculator();
 		DistByAxes result = (DistByAxes) myCalculator.Calculate(myExperiment);
@@ -27,7 +27,7 @@ public class AGCManager implements AgcCalculatorInterface {
 	public SpeedByAxes CalculateSpeed(String InputFile, int time) throws AGCException {
 		ExperimentDataFileManager myDataManager = new ExperimentDataFileManager();
 		Experiment myExperiment = myDataManager.Parse(InputFile);		
-		myExperiment.identifySubExperiment(time);
+		myExperiment.identifySubExperiment(0,time);
 		
 		Calculator myCalculator = new MeanVarSpeedCalculator ();
 		SpeedByAxes result = (SpeedByAxes) myCalculator.Calculate(myExperiment);

@@ -15,13 +15,13 @@ public class ExperimentChunk {
 	private double longitude;
 
 	// Effort spent: 3 minutos
-	public ExperimentChunk(Date time, double accel_x, double accel_y, double accel_z, double latitude, double longitude) {
+	public ExperimentChunk(Date time, double accel_x, double accel_y, double accel_z, double latitude, double Longitud) {
 		this.time = time;
 		this.accel_x = accel_x;
 		this.accel_y = accel_y;
 		this.accel_z = accel_z;
-		this.latitude = latitude;
-		this.longitude = longitude;
+		this.latitude = accel_z;
+		this.longitude = accel_z;
 	}
 	
 	public Date getTime() {
@@ -40,27 +40,23 @@ public class ExperimentChunk {
 		return accel_z;
 	}
 
-	public double getLatitude() {
+	public double getlatitude() {
 		return latitude;
 	}
-
+	
 	public double getLongitude() {
 		return longitude;
 	}
-
-	
 	// Effort spent: 12 minutos
 	@Override
 	public String toString() {
 		String result = "";
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.S");
-		result += "Time: " + formatter.format(time) + "\n";
 		result += "ACCEL_X: " + accel_x + "\n";
 		result += "ACCEL_Y: " + accel_y + "\n";
-		result += "ACCEL_Z: " + accel_z+ "\n";
+		result += "ACCEL_Z: " + accel_z + "\n";
 		result += "LATITUDE: " + latitude+ "\n";
-		result += "LONGITUDE: " + longitude+ "\n";
+		result += "LATITUDE: " + longitude;
 		return result;
 	}
-
 }

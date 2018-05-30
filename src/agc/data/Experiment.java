@@ -33,16 +33,18 @@ public class Experiment {
 	}
 	
 	// Effort spent: 32 minutos
-	public void identifySubExperiment (int time) throws AGCException {
+	public void identifySubExperiment (int InitialInstant, int FinalInstant) throws AGCException {
 		long experimentLengthMillis = calculateExperimentLenght();
-		if (time < 0) {
-			throw new AGCException("Error: duration less than zero.");
-		} else if (time > experimentLengthMillis) {
+		if (InitialInstant < 0) {
+			throw new AGCException("Error: initial instant less than zero.");
+		} else if (FinalInstant < 0) {
+			throw new AGCException("Error: final instant less than zero.");
+		} else if (InitialInstant + FinalInstant > experimentLengthMillis) {
 			throw new AGCException("Error: time frame to process exceeds experiment length.");
 		}
 		else {
-			this.subExperimentInitialItem = calculatePositionIndex(time);
-			this.subExperimentFinalItem = calculatePositionIndex(time);
+			this.subExperimentInitialItem = calculatePositionIndex(InitialInstant);
+			this.subExperimentFinalItem = calculatePositionIndex(FinalInstant);
 		}
 	}
 	
@@ -58,7 +60,7 @@ public class Experiment {
 		}
 		return length;
 	}
-
+	
 	// Effort spent: 25 minutos
 	private int calculatePositionIndex(int Instant) {
 		int index;
@@ -97,5 +99,3 @@ public class Experiment {
 	}
 	
 }
-
-
