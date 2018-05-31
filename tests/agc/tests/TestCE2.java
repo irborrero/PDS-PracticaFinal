@@ -13,7 +13,7 @@ import agc.exceptions.AGCException;
 
 import agc.*;
 
-public class Test1 {
+public class TestCE2 {
 	
 	/* Caso de Prueba: <CP-AGCRF01-01 - Ruta fichero inexistente>
 	*Clase equivalencia: CEI2
@@ -24,7 +24,7 @@ public class Test1 {
 		String message ="";
 		AGCManager calculadora = new AGCManager();
 		try {
-		calculadora.CalculateDist("Noexiste.json", 60);
+		calculadora.CalculateSpeed("Noexiste.json", 60);
 		}catch(AGCException ex){
 			ex.printStackTrace();
 			message = ex.getMessage();
@@ -41,7 +41,7 @@ public class Test1 {
 		String message ="";
 		AGCManager calculadora = new AGCManager();
 		try {
-		calculadora.CalculateDist("Incorrecto.json", 60);
+		calculadora.CalculateSpeed("Incorrecto.json", 60);
 		}catch(AGCException ex){
 			ex.printStackTrace();
 			message = ex.getMessage();
@@ -58,7 +58,7 @@ public class Test1 {
 		String message ="";
 		AGCManager calculadora = new AGCManager();
 		try {
-		calculadora.CalculateDist("SinTimeStamp.json", 60);
+		calculadora.CalculateSpeed("SinTimeStamp.json", 60);
 		}catch(AGCException ex){
 			ex.printStackTrace();
 			message = ex.getMessage();
@@ -76,7 +76,7 @@ public class Test1 {
 			String message ="";
 			AGCManager calculadora = new AGCManager();
 			try {
-			calculadora.CalculateDist("VariosTimeStamp.json", 60);
+			calculadora.CalculateSpeed("VariosTimeStamp.json", 60);
 			}catch(AGCException ex){
 				ex.printStackTrace();
 				message = ex.getMessage();
@@ -93,7 +93,7 @@ public class Test1 {
 			String message ="";
 			AGCManager calculadora = new AGCManager();
 			try {
-			calculadora.CalculateDist("Error: invalid input for Time in JSON.", 60);
+			calculadora.CalculateSpeed("Error: invalid input for Time in JSON.", 60);
 			}catch(AGCException ex){
 				ex.printStackTrace();
 				message = ex.getMessage();
@@ -110,7 +110,7 @@ public class Test1 {
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("TimeStampNegativo.json", 60);
+				calculadora.CalculateSpeed("TimeStampNegativo.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -127,7 +127,7 @@ public class Test1 {
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("TimeStampIrrespetuoso.json", 60);
+				calculadora.CalculateSpeed("TimeStampIrrespetuoso.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -144,7 +144,7 @@ public class Test1 {
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("NoDecimal.json", 60);
+				calculadora.CalculateSpeed("NoDecimal.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -161,7 +161,7 @@ public class Test1 {
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("NoSeparadosPunto.json", 60);
+				calculadora.CalculateSpeed("NoSeparadosPunto.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -178,7 +178,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("DecimalesImprecisos.json", 60);
+				calculadora.CalculateSpeed("DecimalesImprecisos.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -196,7 +196,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin 
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("SinCampoDeEje.json", 60);
+				calculadora.CalculateSpeed("SinCampoDeEje.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -213,7 +213,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("VariosCamposDeEje.json", 60);
+				calculadora.CalculateSpeed("VariosCamposDeEje.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -231,7 +231,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("VariosCamposDeLatitud.json", 60);
+				calculadora.CalculateSpeed("VariosCamposDeLatitud.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -248,7 +248,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin 
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("SinLatitud.json", 60);
+				calculadora.CalculateSpeed("SinLatitud.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -265,7 +265,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("LatitudNoDecimal.json", 60);
+				calculadora.CalculateSpeed("LatitudNoDecimal.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -283,7 +283,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("LatitudNoPunto.json", 60);
+				calculadora.CalculateSpeed("LatitudNoPunto.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -300,7 +300,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("LatitudNoExacta.json", 60);
+				calculadora.CalculateSpeed("LatitudNoExacta.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -318,7 +318,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de l
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("LatitudVLNegativo.json", 60);
+				calculadora.CalculateSpeed("LatitudVLNegativo.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -335,7 +335,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de l
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("LatitudVLPositivo.json", 60);
+				calculadora.CalculateSpeed("LatitudVLPositivo.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -353,7 +353,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("VariosLongitud.json", 60);
+				calculadora.CalculateSpeed("VariosLongitud.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -371,7 +371,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin 
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("SinLongitud.json", 60);
+				calculadora.CalculateSpeed("SinLongitud.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -389,7 +389,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("LongitudNoDecimal.json", 60);
+				calculadora.CalculateSpeed("LongitudNoDecimal.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -407,7 +407,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("LongitudNoPunto.json", 60);
+				calculadora.CalculateSpeed("LongitudNoPunto.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -425,7 +425,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("LongitudNoExacta.json", 60);
+				calculadora.CalculateSpeed("LongitudNoExacta.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -443,7 +443,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de l
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("LongitudVLNegativo.json", 60);
+				calculadora.CalculateSpeed("LongitudVLNegativo.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -462,7 +462,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de l
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("LongitudVLPositivo.json", 60);
+				calculadora.CalculateSpeed("LongitudVLPositivo.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -481,7 +481,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Variable neg
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("Prueba1", -2);
+				calculadora.CalculateSpeed("Prueba1", -2);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -499,7 +499,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Variable negativa no v
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("Prueba1", -1);
+				calculadora.CalculateSpeed("Prueba1", -1);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -517,7 +517,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Variable introducida i
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("Prueba1", 101);
+				calculadora.CalculateSpeed("Prueba1", 101);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					message = ex.getMessage();
@@ -535,7 +535,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Variable introducida i
 				String message ="";
 				AGCManager calculadora = new AGCManager();
 				try {
-				calculadora.CalculateDist("Prueba1.json", 60);
+				calculadora.CalculateSpeed("Prueba1.json", 60);
 				}catch(AGCException ex){
 					ex.printStackTrace();
 					System.out.println("caca");
