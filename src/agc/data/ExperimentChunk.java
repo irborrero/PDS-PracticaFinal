@@ -15,13 +15,13 @@ public class ExperimentChunk {
 	private double longitude;
 
 	// Effort spent: 3 minutos
-	public ExperimentChunk(Date time, double accel_x, double accel_y, double accel_z, double latitude, double Longitud) {
+	public ExperimentChunk(Date time, double accel_x, double accel_y, double accel_z, double latitude, double longitude) {
 		this.time = time;
 		this.accel_x = accel_x;
 		this.accel_y = accel_y;
 		this.accel_z = accel_z;
-		this.latitude = accel_z;
-		this.longitude = accel_z;
+		this.latitude = latitude;
+		this.longitude = longitude;
 	}
 	
 	public Date getTime() {

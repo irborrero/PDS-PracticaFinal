@@ -8,12 +8,15 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import agc.logic.Calculator;
+import agc.data.DistByAxes;
 import agc.data.SpeedByAxes;
 import agc.exceptions.AGCException;
 
 import agc.*;
 
 public class Test1 {
+	
+	AGCManager calculadora = new AGCManager();
 	
 	/* Caso de Prueba: <CP-AGCRF01-01 - Ruta fichero inexistente>
 	*Clase equivalencia: CEI2
@@ -22,7 +25,7 @@ public class Test1 {
 	@Test
 	public final void FicheroInexistente() {
 		String message ="";
-		AGCManager calculadora = new AGCManager();
+		
 		try {
 		calculadora.CalculateDist("Noexiste.json", 60);
 		}catch(AGCException ex){
@@ -39,7 +42,7 @@ public class Test1 {
 	@Test
 	public final void SintaxisIncorrecta() {
 		String message ="";
-		AGCManager calculadora = new AGCManager();
+		
 		try {
 		calculadora.CalculateDist("Incorrecto.json", 60);
 		}catch(AGCException ex){
@@ -56,7 +59,7 @@ public class Test1 {
 	@Test
 	public final void SinTimeStamp() {
 		String message ="";
-		AGCManager calculadora = new AGCManager();
+		
 		try {
 		calculadora.CalculateDist("SinTimeStamp.json", 60);
 		}catch(AGCException ex){
@@ -74,7 +77,7 @@ public class Test1 {
 		@Test
 		public final void VariosTimeStamp() {
 			String message ="";
-			AGCManager calculadora = new AGCManager();
+			
 			try {
 			calculadora.CalculateDist("VariosTimeStamp.json", 60);
 			}catch(AGCException ex){
@@ -91,7 +94,7 @@ public class Test1 {
 		@Test
 		public final void TimeStampImpreciso() {
 			String message ="";
-			AGCManager calculadora = new AGCManager();
+			
 			try {
 			calculadora.CalculateDist("Error: invalid input for Time in JSON.", 60);
 			}catch(AGCException ex){
@@ -108,7 +111,7 @@ public class Test1 {
 			@Test
 			public final void TimeStampNegativo() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("TimeStampNegativo.json", 60);
 				}catch(AGCException ex){
@@ -125,7 +128,7 @@ public class Test1 {
 			@Test
 			public final void TimeStampIrrespetuoso() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("TimeStampIrrespetuoso.json", 60);
 				}catch(AGCException ex){
@@ -142,7 +145,7 @@ public class Test1 {
 			@Test
 			public final void NoDecimal() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("NoDecimal.json", 60);
 				}catch(AGCException ex){
@@ -159,7 +162,7 @@ public class Test1 {
 			@Test
 			public final void NoSeparadosPunto() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("NoSeparadosPunto.json", 60);
 				}catch(AGCException ex){
@@ -176,7 +179,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: less 
 			@Test
 			public final void DecimalesImprecisos() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("DecimalesImprecisos.json", 60);
 				}catch(AGCException ex){
@@ -194,7 +197,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: ACCEL
 			@Test
 			public final void SinCampoDeEje() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("SinCampoDeEje.json", 60);
 				}catch(AGCException ex){
@@ -211,7 +214,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 			@Test
 			public final void VariosCamposDeEje() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("VariosCamposDeEje.json", 60);
 				}catch(AGCException ex){
@@ -229,7 +232,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 			@Test
 			public final void VariosCamposDeLatitud() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("VariosCamposDeLatitud.json", 60);
 				}catch(AGCException ex){
@@ -246,7 +249,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin 
 			@Test
 			public final void SinLatitud() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("SinLatitud.json", 60);
 				}catch(AGCException ex){
@@ -263,7 +266,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: LATIT
 			@Test
 			public final void LatitudNoDecimal() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("LatitudNoDecimal.json", 60);
 				}catch(AGCException ex){
@@ -281,7 +284,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: could
 			@Test
 			public final void LatitudNoPunto() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("LatitudNoPunto.json", 60);
 				}catch(AGCException ex){
@@ -298,7 +301,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 			@Test
 			public final void LatitudNoExacta() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("LatitudNoExacta.json", 60);
 				}catch(AGCException ex){
@@ -316,7 +319,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Error: value for LATIT
 			@Test
 			public final void LatitudVLNegativo() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("LatitudVLNegativo.json", 60);
 				}catch(AGCException ex){
@@ -333,7 +336,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Error: value for LATIT
 			@Test
 			public final void LatitudVLPositivo() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("LatitudVLPositivo.json", 60);
 				}catch(AGCException ex){
@@ -351,7 +354,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 			@Test
 			public final void VariosLongitud() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("VariosLongitud.json", 60);
 				}catch(AGCException ex){
@@ -369,7 +372,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: LONGI
 			@Test
 			public final void SinLongitud() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("SinLongitud.json", 60);
 				}catch(AGCException ex){
@@ -387,7 +390,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: LONGI
 			@Test
 			public final void LongitudNoDecimal() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("LongitudNoDecimal.json", 60);
 				}catch(AGCException ex){
@@ -405,7 +408,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: could
 			@Test
 			public final void LongitudNoPunto() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("LongitudNoPunto.json", 60);
 				}catch(AGCException ex){
@@ -423,7 +426,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 			@Test
 			public final void LongitudNoExacta() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("LongitudNoExacta.json", 60);
 				}catch(AGCException ex){
@@ -441,7 +444,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Error: value for LONGI
 			@Test
 			public final void LongitudVLNegativo() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("LongitudVLNegativo.json", 60);
 				}catch(AGCException ex){
@@ -460,7 +463,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Error: value for LONGI
 			@Test
 			public final void LongitudVLPositivo() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("LongitudVLPositivo.json", 60);
 				}catch(AGCException ex){
@@ -479,7 +482,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: Inval
 			@Test
 			public final void VariableNegativa() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("Prueba1", -2);
 				}catch(AGCException ex){
@@ -497,7 +500,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Error: Invalid time va
 			@Test
 			public final void VariableAVL() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("Prueba1", -1);
 				}catch(AGCException ex){
@@ -515,7 +518,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Variable introducida i
 			@Test
 			public final void VariableAVL2() {
 				String message ="";
-				AGCManager calculadora = new AGCManager();
+				
 				try {
 				calculadora.CalculateDist("Prueba1", 101);
 				}catch(AGCException ex){
@@ -526,21 +529,24 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Variable introducida i
 	}	
 				
 
-			////////////////// FALTA
-			//TODAS LAS CLASES VÁLIDAS
-			//LAS  excepciones y la de arriba
-			
+/* Caso de Prueba: < CP-AGCRF01-30 -Correcto>
+*Clase de Equivalencia: todas las validas
+Técnica de prueba: <Clase de Equivalencia>  Resultado Esperado: <JSON con salida de distancia>
+*/					
 			@Test
-			public final void validoe() {
-				String message ="";
-				AGCManager calculadora = new AGCManager();
-				try {
-				calculadora.CalculateDist("Prueba1.json", 60);
-				}catch(AGCException ex){
-					ex.printStackTrace();
-					System.out.println("caca");
-					message = ex.getMessage();
-				}
+			public final void valido1() throws AGCException {
 				
+				DistByAxes result = calculadora.CalculateDist("Prueba1.json", 60);
+				
+				Assert.assertEquals(0.0036f, result.getdist_X(), 0.0001f);
+				Assert.assertEquals(0.0054f, result.getdist_Y(), 0.0001f);
+				Assert.assertEquals(0.0018f, result.getdist_Z(), 0.0001f);
 			}
+			
+/* Caso de Prueba: < CP-AGCRF01-31 -El valor de la variable duración es 0>
+*Valor limite asociado: AVL8
+Técnica de prueba: <Valor limite>  Resultado Esperado: <JSON con salida de distancia>
+*/
+				
+			
 }

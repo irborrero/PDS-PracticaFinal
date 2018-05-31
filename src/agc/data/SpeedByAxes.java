@@ -1,9 +1,9 @@
 package agc.data;
 
 public class SpeedByAxes {
-	private MeanVarSpeed x_Axis;
-	private MeanVarSpeed y_Axis;
-	private MeanVarSpeed z_Axis;
+	public MeanVarSpeed x_Axis;
+	public MeanVarSpeed y_Axis;
+	public MeanVarSpeed z_Axis;
 	
 	public MeanVarSpeed getX_Axis() {
 		return x_Axis;

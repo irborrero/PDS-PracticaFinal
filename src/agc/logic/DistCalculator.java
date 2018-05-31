@@ -17,11 +17,11 @@ public class DistCalculator implements Calculator {
 		double xValue = 0, yValue = 0, zValue = 0, xvel = 0, yvel = 0, zvel = 0;
 		
 		// Skip to next element to process the remaining values 
-		for (int i=myExperiment.getSubExperimentInitialItem()+1; i<myExperiment.getSubExperimentFinalItem(); i++){
+		for (int i=myExperiment.getSubExperimentInitialItem(); i<myExperiment.getSubExperimentFinalItem(); i++){
 			ExperimentChunk currentChunk = myExperiment.getItem(i);
 			xValue += xvel*0.02 + 0.5*currentChunk.getAccel_x()*Math.pow(0.02,2);
 			yValue += yvel*0.02 + 0.5*currentChunk.getAccel_y()*Math.pow(0.02,2);
-			zValue += yvel*0.02 + 0.5*currentChunk.getAccel_z()*Math.pow(0.02,2);
+			zValue += zvel*0.02 + 0.5*currentChunk.getAccel_z()*Math.pow(0.02,2);
 			xvel += currentChunk.getAccel_x()*0.02;
 			yvel += currentChunk.getAccel_y()*0.02;
 			zvel += currentChunk.getAccel_z()*0.02;

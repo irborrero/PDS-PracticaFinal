@@ -1,8 +1,8 @@
 package agc.data;
 
- class MeanVarSpeed {
-	double meanSpeed;
-	double varSpeed;
+ public class MeanVarSpeed {
+	public double meanSpeed;
+	public double varSpeed;
 		
 	public double getmeanSpeed() {
 		return meanSpeed;
