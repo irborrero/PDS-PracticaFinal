@@ -17,7 +17,7 @@ public class Test1 {
 	
 	/* Caso de Prueba: <CP-AGCRF01-01 - Ruta fichero inexistente>
 	*Clase equivalencia: CEI2
-	 Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero inexistente>
+	 Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: could not read data from input file.>
 	*/
 	@Test
 	public final void FicheroInexistente() {
@@ -34,7 +34,7 @@ public class Test1 {
 	
 	/* Caso de Prueba: <CP-AGCRF01-02 - Sintaxis incorrecta>
 	*Clase equivalencia: CEI4
-	 Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Sintaxis incorrecta>
+	 Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: could not read data from input file.>
 	*/
 	@Test
 	public final void SintaxisIncorrecta() {
@@ -51,7 +51,7 @@ public class Test1 {
 	
 	/* Caso de Prueba: <CP-AGCRF01-03 - Time Stamp no aparece en el fichero de entrada>
 	*Clase equivalencia: CEI7
-	 Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero no contiene time_stamp>
+	 Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: invalid input for Time in JSON.>
 	*/
 	@Test
 	public final void SinTimeStamp() {
@@ -69,7 +69,7 @@ public class Test1 {
 		
 	/* Caso de Prueba: <CP-AGCRF01-04 - Time Stamp aparece varias veces>
 	*Clase equivalencia: CEI8
-	Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero contiene varios time_stamp>
+	Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: Invalid key value in input JSON.>
 	*/
 		@Test
 		public final void VariosTimeStamp() {
@@ -86,7 +86,7 @@ public class Test1 {
 		
 	/* Caso de Prueba: <CP-AGCRF01-05 - Time Stamp sin precisión de milisegundos>
 	*Clase equivalencia: CEI9
-	 Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Time Stamp sin precisión requerida>
+	 Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: could not read data from input file.>
 	*/
 		@Test
 		public final void TimeStampImpreciso() {
@@ -103,7 +103,7 @@ public class Test1 {
 			
 	/*Caso de Prueba: <CP-AGCRF01-06 - Time Stamp tiene algún campo negativo>
 	*Clase equivalencia: CEI10
-	Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Time Stamp contiene algún campo negativo>
+	Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: invalid input for Time in JSON.>
 	*/
 			@Test
 			public final void TimeStampNegativo() {
@@ -120,7 +120,7 @@ public class Test1 {
 			
 	/* Caso de Prueba: < CP-AGCRF01-07 - Time Stamp no respeta intervalo de 20 ms>
 	*Clase equivalencia: CEI11
-	Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <TimeStamp con intervalo incorrecto>
+	Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: time values in experiment are not consecutive with a 50Hz rate.>
 	*/
 			@Test
 			public final void TimeStampIrrespetuoso() {
@@ -137,7 +137,7 @@ public class Test1 {
 			
 	/* Caso de Prueba: < CP-AGCRF01-08 - El valor de aceleración del eje X no es un número decimal>
 	 *Clase equivalencia: CEI13
-	Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Valor de campo de eje no es número decimal>
+	Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: ACCEL_X in JSON input data is not a number.>
 	*/
 			@Test
 			public final void NoDecimal() {
@@ -154,7 +154,7 @@ public class Test1 {
 		
 	/* Caso de Prueba: < CP-AGCRF01-09 - Número decimal no separado por puntos>
 	*Clase equivalencia: CEI14
-	Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con decimales en formato incorrecto>
+	Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: could not read data from input file.>
 	*/
 			@Test
 			public final void NoSeparadosPunto() {
@@ -171,7 +171,7 @@ public class Test1 {
 			
 /* Caso de Prueba: < CP-AGCRF01-10 - Número decimal con menos de tres posiciones decimales>
 *Clase equivalencia: CEI15
-Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con valores con precisión incorrecta>
+Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: less than 3 decimals for ACCEL_X in JSON input data.>
 */
 			@Test
 			public final void DecimalesImprecisos() {
@@ -189,7 +189,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 
 /* Caso de Prueba: < CP-AGCRF01-11 - No existe un campo para el eje X>
 *Clase equivalencia: CEI16
-Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin campo de eje>
+Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: ACCEL_X in JSON input data is not a number.>
 */
 			@Test
 			public final void SinCampoDeEje() {
@@ -258,7 +258,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin 
 			
 /* Caso de Prueba: < CP-AGCRF01-15 - El valor latitud no es un valor decimal>
 *Clase equivalencia: CEI21
-Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con valor de latitud no decimal>
+Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: LATITUDE in JSON input data is not a number.>
 */
 			@Test
 			public final void LatitudNoDecimal() {
@@ -275,7 +275,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 		
 /* Caso de Prueba: < CP-AGCRF01-16 -La parte entera y decimal de la latitud no están separadas por un punto>
 *Clase equivalencia: CEI22
-Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con valor de latitud no válido>
+Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: could not read data from input file.>
 */
 			
 			@Test
@@ -311,7 +311,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 
 /* Caso de Prueba: < CP-AGCRF01-18 -El valor latitud es -90.0000000>
 *Valor limite asociado: AVL1
-Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de latitud fuera de rango negativo>
+Técnica de prueba: <Valor limite>  Resultado Esperado: <Error: value for LATITUDE cannot be less than -89.9999999 or greater than 89.9999999.>
 */
 			@Test
 			public final void LatitudVLNegativo() {
@@ -328,7 +328,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de l
 			
 /* Caso de Prueba: < CP-AGCRF01-19 -El valor latitud es 90.0000000>
 *Valor limite asociado: AVL4
-Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de latitud fuera de rango positivo>
+Técnica de prueba: <Valor limite>  Resultado Esperado: <Error: value for LATITUDE cannot be less than -89.9999999 or greater than 89.9999999.>
 */
 			@Test
 			public final void LatitudVLPositivo() {
@@ -363,7 +363,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 			
 /* Caso de Prueba: < CP-AGCRF01-21 -No existe un campo para la longitud>
 *Clase de Equivalencia: CEI26
-Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin un campo para longitud>
+Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: LONGITUDE in JSON input data is not a number.>
 */
 			
 			@Test
@@ -382,7 +382,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero sin 
 
 /* Caso de Prueba: < CP-AGCRF01-22 -El valor longitud no es un valor decimal>
 *Clase de Equivalencia: CEI27
-Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con valor de longitud no decimal>
+Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: LONGITUDE in JSON input data is not a number.>
 */
 			@Test
 			public final void LongitudNoDecimal() {
@@ -400,7 +400,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 			
 /* Caso de Prueba: < CP-AGCRF01-23 -La parte entera y decimal de la longitud no están separadas por un punto>
 *Clase de Equivalencia: CEI28
-Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con valor de longitud no válido>
+Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: could not read data from input file.>
 */
 			@Test
 			public final void LongitudNoPunto() {
@@ -436,7 +436,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 			
 /* Caso de Prueba: < CP-AGCRF01-25 -El valor longitud es -180.0000000>
 *Valor limite asociado: AVL5
-Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de longitud fuera de rango>
+Técnica de prueba: <Valor limite>  Resultado Esperado: <Error: value for LONGITUDE cannot be less than -179.9999999 or greater than 179.9999999.>
 */
 			@Test
 			public final void LongitudVLNegativo() {
@@ -454,7 +454,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de l
 	
 /* Caso de Prueba: < CP-AGCRF01-26 -El valor longitud es 180.0000000>
 *Valor limite asociado: AVL8
-Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de longitud fuera de rango>
+Técnica de prueba: <Valor limite>  Resultado Esperado: <Error: value for LONGITUDE cannot be less than -179.9999999 or greater than 179.9999999.>
 */
 			
 			@Test
@@ -474,7 +474,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de l
 			
 /* Caso de Prueba: < CP-AGCRF01-27 -Variable duración con valores negativos>
 *Clase de Equivalencia: CEI29
-Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Variable negativa no válida>
+Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Error: Invalid time value in input.>
 */
 			@Test
 			public final void VariableNegativa() {
@@ -492,7 +492,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Variable neg
 			
 /* Caso de Prueba: < CP-AGCRF01-28 -El valor de la variable duración es -1>
 *Valor limite asociado: AVL8
-Técnica de prueba: <Valor limite>  Resultado Esperado: <Variable negativa no válida>
+Técnica de prueba: <Valor limite>  Resultado Esperado: <Error: Invalid time value in input.>
 */
 			@Test
 			public final void VariableAVL() {
@@ -528,7 +528,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Variable introducida i
 
 			////////////////// FALTA
 			//TODAS LAS CLASES VÁLIDAS
-			//LAS EXCEPCIONES
+			//LAS  excepciones y la de arriba
 			
 			@Test
 			public final void validoe() {
