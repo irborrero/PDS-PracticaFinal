@@ -15,7 +15,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-03 - Fichero Inexistente>
 		* Nodo/s del Árbol de Derivación: <1>
 		 Tipo de Prueba: <Omisión>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void FicheroInexistente() {
@@ -33,7 +33,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-04 - Omisión inicio objeto>
 		* Nodo/s del Árbol de Derivación: <2>
 		 Tipo de Prueba: <Omisión>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void OmisionInicio() {
@@ -51,7 +51,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-05 - Adición inicio objeto>
 		* Nodo/s del Árbol de Derivación: <2>
 		 Tipo de Prueba: <Adición>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void AdicionInicio() {
@@ -69,7 +69,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-06 - Modificacion inicio objeto>
 		* Nodo/s del Árbol de Derivación: <5>
 		 Tipo de Prueba: <Modificacion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void ModificacionInicio() {
@@ -88,7 +88,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-07 - Omision inicio medicion>
 		* Nodo/s del Árbol de Derivación: <6>
 		 Tipo de Prueba: <Omision>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void OmisionInicioMed() {
@@ -107,7 +107,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-08 - Adicion inicio medicion>
 		* Nodo/s del Árbol de Derivación: <6>
 		 Tipo de Prueba: <Adicion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void AdicionInicioMed() {
@@ -126,7 +126,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-09 - Modificacion inicio medicion>
 		* Nodo/s del Árbol de Derivación: <14>
 		 Tipo de Prueba: <Modificacion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void ModificacionInicioMed() {
@@ -144,7 +144,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-10 - OmisionTimeStamp>
 		* Nodo/s del Árbol de Derivación: <7>
 		 Tipo de Prueba: <Omision>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: invalid input for Time in JSON.>
 		*/
 		@Test
 		public final void OmisionTimeStamp() {
@@ -163,7 +163,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-11 - AdicionTimeStamp>
 		* Nodo/s del Árbol de Derivación: <7>
 		 Tipo de Prueba: <Adicion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.">
 		*/
 		@Test
 		public final void AdicionTimeStamp() {
@@ -181,7 +181,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-12 - OmisionEtiquetaTS>
 		* Nodo/s del Árbol de Derivación: <15>
 		 Tipo de Prueba: <Omision>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void OmisionEtiquetaTS() {
@@ -199,7 +199,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-13 - AdicionEtiquetaTS>
 		* Nodo/s del Árbol de Derivación: <15>
 		 Tipo de Prueba: <Adicion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void AdicionEtiquetaTS() {
@@ -217,7 +217,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-14 - ModificacionEtiquetaTS>
 		* Nodo/s del Árbol de Derivación: <50>
 		 Tipo de Prueba: <Modificacion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: invalid input for Time in JSON.>
 		*/
 		@Test
 		public final void ModificacionEtiquetaTS() {
@@ -235,7 +235,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-15 - OmisionSeparadorFecha>
 		* Nodo/s del Árbol de Derivación: <17>
 		 Tipo de Prueba: <Omision>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void OmisionSF() {
@@ -253,7 +253,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-16 - AdicionSeparadorFecha>
 		* Nodo/s del Árbol de Derivación: <17>
 		 Tipo de Prueba: <Adicion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void AdicionSF() {
@@ -271,7 +271,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-17 - ModifiacionSeparadorFecha>
 		* Nodo/s del Árbol de Derivación: <52>
 		 Tipo de Prueba: <Modificacion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void ModificacionSF() {
@@ -289,7 +289,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-18 - Omision medidas Accel>
 		* Nodo/s del Árbol de Derivación: <8>
 		 Tipo de Prueba: <Omision>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: ACCEL_X in JSON input data is not a number.>
 		*/
 		@Test
 		public final void OmisionMA() {
@@ -307,7 +307,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-19 - Adición medidas Accel>
 		* Nodo/s del Árbol de Derivación: <8>
 		 Tipo de Prueba: <Adición>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void AdicionMA() {
@@ -325,7 +325,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-20 - Omision etiqueta Accel>
 		* Nodo/s del Árbol de Derivación: <30>
 		 Tipo de Prueba: <Omision>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void OmisionEtiquetaAccel() {
@@ -343,7 +343,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-21 - Adicion etiqueta Accel>
 		* Nodo/s del Árbol de Derivación: <30>
 		 Tipo de Prueba: <Adicion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void AdicionEtiquetaAccel() {
@@ -361,7 +361,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-22 - Modificacion etiqueta Accel>
 		* Nodo/s del Árbol de Derivación: <65>
 		 Tipo de Prueba: <Modificacion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void ModificacionEtiquetaAccel() {
@@ -380,7 +380,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-23 - Modificacion decimales Accel>
 		* Nodo/s del Árbol de Derivación: <70>
 		 Tipo de Prueba: <Modificacion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void ModificacionDecimalAccel() {
@@ -398,7 +398,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-24 - Omision punto Accel>
 		* Nodo/s del Árbol de Derivación: <33>
 		 Tipo de Prueba: <Omision>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: Invalid separator for decimal number.>
 		*/
 		@Test
 		public final void OmisionPuntoDecimal() {
@@ -416,7 +416,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-25 - Adicion punto Accel>
 		* Nodo/s del Árbol de Derivación: <33>
 		 Tipo de Prueba: <Adicion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void AdicionPuntoDecimal() {
@@ -434,7 +434,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-26 - Modificacion punto Accel>
 		* Nodo/s del Árbol de Derivación: <69>
 		 Tipo de Prueba: <Modificacion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void ModificacionPuntoDecimal() {
@@ -452,7 +452,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-27 -  Omision Latitud>
 		* Nodo/s del Árbol de Derivación: <9>
 		 Tipo de Prueba: <Omision>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void OmisionLatitud() {
@@ -470,7 +470,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-28 -  Adicion Latitud>
 		* Nodo/s del Árbol de Derivación: <9>
 		 Tipo de Prueba: <Adicion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void AdicionLatitud() {
@@ -488,7 +488,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-29 -  Omision etiqueta Latitud>
 		* Nodo/s del Árbol de Derivación: <36>
 		 Tipo de Prueba: <Omision>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void OmisionEtiquetaLatitud() {
@@ -506,7 +506,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-30 -  Adicion etiqueta Latitud>
 		* Nodo/s del Árbol de Derivación: <36>
 		 Tipo de Prueba: <Adicion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void AdicionEtiquetaLatitud() {
@@ -524,7 +524,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-31 -  Modificacion etiqueta Latitud>
 		* Nodo/s del Árbol de Derivación: <72>
 		 Tipo de Prueba: <Modificacion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: LATITUDE in JSON input data is not a number.>
 		*/
 		@Test
 		public final void ModificacionEtiquetaLatitud() {
@@ -543,7 +543,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-32 -  Modificacion signo Latitud>
 		* Nodo/s del Árbol de Derivación: <73>
 		 Tipo de Prueba: <Modificacion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void ModificacionSignoLatitud() {
@@ -561,7 +561,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-33 -  Modificacion decimales Latitud>
 		* Nodo/s del Árbol de Derivación: <77>
 		 Tipo de Prueba: <Modificacion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: less than 7 decimals for LATITUDE in JSON input data.>
 		*/
 		@Test
 		public final void ModificacionDecimalesLatitud() {
@@ -580,7 +580,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-34 -  Omision Longitud>
 		* Nodo/s del Árbol de Derivación: <10>
 		 Tipo de Prueba: <Omision>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: LONGITUDE in JSON input data is not a number.>
 		*/
 		@Test
 		public final void OmisionLongitud() {
@@ -599,7 +599,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-35 -  Adicion Longitud>
 		* Nodo/s del Árbol de Derivación: <10>
 		 Tipo de Prueba: <Adicion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void AdicionLongitud() {
@@ -618,7 +618,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-36 - Omision etiqueta Longitud>
 		* Nodo/s del Árbol de Derivación: <42>
 		 Tipo de Prueba: <Omision>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void OmisionEtiquetaLongitud() {
@@ -636,7 +636,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-37 - Adicion etiqueta Longitud>
 		* Nodo/s del Árbol de Derivación: <42>
 		 Tipo de Prueba: <Adicion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void AdicionEtiquetaLongitud() {
@@ -654,7 +654,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-38 - Modificacion etiqueta Longitud>
 		* Nodo/s del Árbol de Derivación: <79>
 		 Tipo de Prueba: <Modificacion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: Invalid key value in input JSON>
 		*/
 		@Test
 		public final void ModificacionEtiquetaLongitud() {
@@ -672,7 +672,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-39 - Modificacion signo Longitud>
 		* Nodo/s del Árbol de Derivación: <80>
 		 Tipo de Prueba: <Modificacion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: could not read data from input file.>
 		*/
 		@Test
 		public final void ModificacionSignoLongitud() {
@@ -690,7 +690,7 @@ public class TestAS2 {
 		/* Caso de Prueba: <CP-RF1-40 - Modificacion decimales Longitud>
 		* Nodo/s del Árbol de Derivación: <84>
 		 Tipo de Prueba: <Modificacion>  Técnica de prueba: Análisis Sintáctico
-		* Resultado Esperado: <Fichero inexistente>
+		* Resultado Esperado: <Error: less than 7 decimals for LONGITUDE in JSON input data.>
 		*/
 		@Test
 		public final void ModificacionDecimalesLongitud() {
