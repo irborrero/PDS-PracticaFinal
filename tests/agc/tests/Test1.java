@@ -541,12 +541,6 @@ Técnica de prueba: <Clase de Equivalencia>  Resultado Esperado: <JSON con sali
 				Assert.assertEquals(0.0036f, result.getdist_X(), 0.0001f);
 				Assert.assertEquals(0.0054f, result.getdist_Y(), 0.0001f);
 				Assert.assertEquals(0.0018f, result.getdist_Z(), 0.0001f);
-			}
-			
-/* Caso de Prueba: < CP-AGCRF01-31 -El valor de la variable duración es 0>
-*Valor limite asociado: AVL8
-Técnica de prueba: <Valor limite>  Resultado Esperado: <JSON con salida de distancia>
-*/
-				
+			}		
 			
 }

@@ -528,21 +528,22 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Error: ACCEL_X in JSON
 	}	
 				
 
-			////////////////// FALTA
-			//TODAS LAS CLASES VÁLIDAS
-			//LAS EXCEPCIONES
+/* Caso de Prueba: < CP-AGCRF01-30 -Correcto>
+*Clase de Equivalencia: todas las validas
+Técnica de prueba: <Clase de Equivalencia>  Resultado Esperado: <JSON con salida de distancia>
+*/		
 			
-			@Test
-			public final void validoe() {
-				String message ="";
-				
-				try {
-				calculadora.CalculateSpeed("Prueba1.json", 60);
-				}catch(AGCException ex){
-					ex.printStackTrace();
-					System.out.println("caca");
-					message = ex.getMessage();
-				}
-				
-			}
+@Test
+public final void valido1() throws AGCException {
+	
+	SpeedByAxes result = calculadora.CalculateSpeed("Prueba1.json", 60);
+	
+	////// poner resultados que salgan por pantalla
+	Assert.assertEquals(0.0036f, result.getX_Axis().getmeanSpeed(), 0.0001f);
+	Assert.assertEquals(0.0054f, result.getY_Axis().getmeanSpeed(), 0.0001f);
+	Assert.assertEquals(0.0018f, result.getZ_Axis().getmeanSpeed(), 0.0001f);
+	Assert.assertEquals(0.0036f, result.getX_Axis().getvarSpeed(), 0.0001f);
+	Assert.assertEquals(0.0054f, result.getY_Axis().getvarSpeed(), 0.0001f);
+	Assert.assertEquals(0.0018f, result.getZ_Axis().getvarSpeed(), 0.0001f);
+}
 }
