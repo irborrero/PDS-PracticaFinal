@@ -68,7 +68,7 @@ public class ExperimentChunkValidator {
 			}
 			
 			if ((value < -89.9999999d) || (value > 89.9999999d)) {
-				throw new AGCException("Error: latitude value for LATITUDE cannot be less than -89.9999999 or greater than 89.9999999.");
+				throw new AGCException("Error: value for LATITUDE cannot be less than -89.9999999 or greater than 89.9999999.");
 			}
 			
 		}catch (AGCException e) {
@@ -80,15 +80,21 @@ public class ExperimentChunkValidator {
 	
 	private double validateLongitude(JsonObject element, String label) throws AGCException {
 		double longitude = 0.0d;
+		double value = processNumberForLabel(label, element);
 		try {
-			longitude = processNumberForLabel(label, element);
-			if ((longitude < -89.9999999d) || (longitude > 89.9999999d)) {
-				throw new AGCException("Error: longitude value for" + label + " cannot be less than -179.9999999 or greater than 179.9999999.");
+			if(!hasAtLeastSevenDecimals(element.getJsonNumber("LONGITUDE").toString())) {
+				throw new AGCException("Error: less than 7 decimals for LONGITUDE in JSON input data.");
 			}
-		} catch (AGCException e) {
-			throw e;
-		}
+			
+			if ((value < -179.9999999d) || (value > 179.9999999d)) {
+				throw new AGCException("Error: value for LONGITUDE cannot be less than -179.9999999 or greater than 179.9999999.");
+			}
+			
+		}catch (AGCException e) {
+				throw e;
+			}
 		return longitude;
+
 	}
 	
 	// Effort spent: 21 minutos

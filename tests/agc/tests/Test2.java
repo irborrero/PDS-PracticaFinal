@@ -225,7 +225,7 @@ public class Test2 {
 			ex.printStackTrace();
 			message = ex.getMessage();
 		}
-		Assert.assertEquals("Error: could not read data from input file.", message);
+		Assert.assertEquals("Error: invalid input Time in JSON.", message);
 	}
 	
 	/* Caso de Prueba: <CP-RF1-15 - OmisionSeparadorFecha>
@@ -261,7 +261,7 @@ public class Test2 {
 			ex.printStackTrace();
 			message = ex.getMessage();
 		}
-		Assert.assertEquals("Error: could not read data from input file.", message);
+		Assert.assertEquals("Error: invalid input Time in JSON.", message);
 	}
 	
 	/* Caso de Prueba: <CP-RF1-17 - ModifiacionSeparadorFecha>
@@ -315,7 +315,7 @@ public class Test2 {
 			ex.printStackTrace();
 			message = ex.getMessage();
 		}
-		Assert.assertEquals("Error: could not read data from input file.", message);
+		Assert.assertEquals("Error: less than 7 decimals for LONGITUDE in JSON input data.", message);
 	}
 	
 	/* Caso de Prueba: <CP-RF1-20 - Omision etiqueta Accel>

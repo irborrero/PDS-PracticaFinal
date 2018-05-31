@@ -156,7 +156,7 @@ public class TestAS2 {
 				ex.printStackTrace();
 				message = ex.getMessage();
 			}
-			Assert.assertEquals("Error: could not read data from input file.", message);
+			Assert.assertEquals("Error: invalid input for Time in JSON.", message);
 		}
 		
 		
@@ -229,7 +229,7 @@ public class TestAS2 {
 				ex.printStackTrace();
 				message = ex.getMessage();
 			}
-			Assert.assertEquals("Error: could not read data from input file.", message);
+			Assert.assertEquals("Error: invalid input for Time in JSON.", message);
 		}
 		
 		/* Caso de Prueba: <CP-RF1-15 - OmisionSeparadorFecha>
@@ -301,7 +301,7 @@ public class TestAS2 {
 				ex.printStackTrace();
 				message = ex.getMessage();
 			}
-			Assert.assertEquals("Error: could not read data from input file.", message);
+			Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
 		}
 		
 		/* Caso de Prueba: <CP-RF1-19 - Adición medidas Accel>
@@ -410,7 +410,7 @@ public class TestAS2 {
 				ex.printStackTrace();
 				message = ex.getMessage();
 			}
-			Assert.assertEquals("Error: could not read data from input file.", message);
+			Assert.assertEquals("Error: Invalid separator for decimal number.", message);
 		}
 		
 		/* Caso de Prueba: <CP-RF1-25 - Adicion punto Accel>
@@ -536,7 +536,7 @@ public class TestAS2 {
 				ex.printStackTrace();
 				message = ex.getMessage();
 			}
-			Assert.assertEquals("Error: could not read data from input file.", message);
+			Assert.assertEquals("Error: LATITUDE in JSON input data is not a number.", message);
 		}
 		
 		
@@ -573,7 +573,7 @@ public class TestAS2 {
 				ex.printStackTrace();
 				message = ex.getMessage();
 			}
-			Assert.assertEquals("Error: could not read data from input file.", message);
+			Assert.assertEquals("Error: less than 7 decimals for LATITUDE in JSON input data.", message);
 		}
 		
 
@@ -592,7 +592,7 @@ public class TestAS2 {
 				ex.printStackTrace();
 				message = ex.getMessage();
 			}
-			Assert.assertEquals("Error: could not read data from input file.", message);
+			Assert.assertEquals("Error: LONGITUDE in JSON input data is not a number.", message);
 		}
 		
 
@@ -666,7 +666,7 @@ public class TestAS2 {
 				ex.printStackTrace();
 				message = ex.getMessage();
 			}
-			Assert.assertEquals("Error: could not read data from input file.", message);
+			Assert.assertEquals("Error: Invalid key value in input JSON.", message);
 		}
 		
 		/* Caso de Prueba: <CP-RF1-39 - Modificacion signo Longitud>
@@ -702,7 +702,7 @@ public class TestAS2 {
 				ex.printStackTrace();
 				message = ex.getMessage();
 			}
-			Assert.assertEquals("Error: could not read data from input file.", message);
+			Assert.assertEquals("Error: less than 7 decimals for LONGITUDE in JSON input data.", message);
 		}
 
 

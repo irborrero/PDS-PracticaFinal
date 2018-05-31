@@ -15,7 +15,6 @@ public class ExperimentDataFileManager {
 		AGCJsonHandler jsonHandler = new AGCJsonHandler();
 		JsonArray jsonArray = jsonHandler.readJson(InputFile);
 		Experiment myExperiment = ValiateJSON (jsonArray);
-		
 		return myExperiment;
 	}
 
@@ -26,12 +25,14 @@ public class ExperimentDataFileManager {
 		ExperimentChunkValidator myChunkValidator = new ExperimentChunkValidator();
 		for (JsonObject element : jsonArray.getValuesAs(JsonObject.class)) {
 			ExperimentChunk item = myChunkValidator.Validate(element);
+
 			myExperiment.AddExperimentChunk(item);
 		}
 		if (myExperiment.isSemanticallyRight())
 		{ 
 			return myExperiment;
 		}
+		
 		else
 		{
 			return null;

@@ -13,6 +13,7 @@ public class AGCManager implements AgcCalculatorInterface {
 
 	@Override
 	public DistByAxes CalculateDist(String InputFile, int time) throws AGCException {
+		if(time<0)throw new AGCException("Error: Invalid time value in input.");
 		ExperimentDataFileManager myDataManager = new ExperimentDataFileManager();
 		Experiment myExperiment = myDataManager.Parse(InputFile);		
 		myExperiment.identifySubExperiment(0,time);
@@ -25,6 +26,7 @@ public class AGCManager implements AgcCalculatorInterface {
 	
 	@Override
 	public SpeedByAxes CalculateSpeed(String InputFile, int time) throws AGCException {
+		if(time<0)throw new AGCException("Error: Invalid time value in input.");
 		ExperimentDataFileManager myDataManager = new ExperimentDataFileManager();
 		Experiment myExperiment = myDataManager.Parse(InputFile);		
 		myExperiment.identifySubExperiment(0,time);

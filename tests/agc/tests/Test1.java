@@ -270,7 +270,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Error: could not read data from input file.", message);
+				Assert.assertEquals("Error: LATITUDE in JSON input data is not a number.", message);
 	}
 		
 /* Caso de Prueba: < CP-AGCRF01-16 -La parte entera y decimal de la latitud no están separadas por un punto>
@@ -323,7 +323,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de l
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Error: latitude value for LATITUDE cannot be less than -89.9999999 or greater than 89.9999999.", message);
+				Assert.assertEquals("Error: value for LATITUDE cannot be less than -89.9999999 or greater than 89.9999999.", message);
 	}
 			
 /* Caso de Prueba: < CP-AGCRF01-19 -El valor latitud es 90.0000000>
@@ -340,7 +340,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de l
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Error: latitude value for LATITUDE cannot be less than -89.9999999 or greater than 89.9999999.", message);
+				Assert.assertEquals("Error: value for LATITUDE cannot be less than -89.9999999 or greater than 89.9999999.", message);
 	}
 			
 
@@ -394,7 +394,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
+				Assert.assertEquals("Error: LONGITUDE in JSON input data is not a number.", message);
 	}
 			
 			
@@ -412,7 +412,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
+				Assert.assertEquals("Error: could not read data from input file.", message);
 	}
 			
 			
@@ -430,7 +430,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Fichero con 
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
+				Assert.assertEquals("Error: less than 7 decimals for LONGITUDE in JSON input data.", message);
 	}	
 			
 			
@@ -448,7 +448,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de l
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
+				Assert.assertEquals("Error: value for LONGITUDE cannot be less than -179.9999999 or greater than 179.9999999.", message);
 	}	
 			
 	
@@ -467,7 +467,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Fichero con valor de l
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
+				Assert.assertEquals("Error: value for LONGITUDE cannot be less than -179.9999999 or greater than 179.9999999.", message);
 	}	
 		
 	
@@ -486,7 +486,7 @@ Técnica de prueba: <Clases de Equivalencia>  Resultado Esperado: <Variable neg
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
+				Assert.assertEquals("Error: Invalid time value in input.", message);
 	}	
 			
 			
@@ -504,7 +504,7 @@ Técnica de prueba: <Valor limite>  Resultado Esperado: <Variable negativa no v
 					ex.printStackTrace();
 					message = ex.getMessage();
 				}
-				Assert.assertEquals("Error: ACCEL_X in JSON input data is not a number.", message);
+				Assert.assertEquals("Error: Invalid time value in input.", message);
 	}	
 			
 
